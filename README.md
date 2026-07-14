@@ -32,3 +32,18 @@ This repository contains my individual work for the IDX Exchange Data Science In
 - Created temporal train/test split — most recent month as test set, preceding months as training set
 
 **Deliverable:** `Jupyter notebook 02_Pre_Process.ipynb`
+
+### Week 4 - Basic Linear Regression Model
+
+- Loaded pre-split train/test data and separated features from target (`ClosePrice`)
+- Dropped ID and date columns plus leakage-prone fields
+- Encoded boolean-like YN columns to 0/1 and label-encoded remaining categorical columns
+- Removed rows with missing target values from train and test sets
+- Imputed missing feature values with median strategy (fit on training set only)
+- Standardized features with `StandardScaler` (fit on training set only)
+- Trained baseline `LinearRegression` model
+- Evaluated on held-out test set: R², RMSE, and median APE
+- Visualized predicted vs. actual prices with identity reference line
+- Serialized trained model and scaler with `joblib` for reuse
+
+**Deliverable:** `Jupyter notebook 03_baseline_model.ipynb`
